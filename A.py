@@ -17,8 +17,6 @@ def devid(x, y):
 
 
 
-
-
 print('''0-addintion
 1-subtraction
 2-multiplation
