@@ -44,7 +44,7 @@ elif operation == '4':
     a = int(input("A = "))
     b = int(input("B = "))
     c = int(input("C = "))
-    delta = (b ** 2) - 4 * a * c
+    delta = (b ** 2) - (4 * a * c)
     if delta > 0:
         x_1 = (-b - sqrt(int(delta))) / (2 * a)
         x_2 = (-b + sqrt(int(delta))) / (2 * a)
@@ -64,7 +64,3 @@ else:
 
 
 print(f"your answeris > {answer} <")
-
-
-
-
