@@ -15,8 +15,6 @@ def devid(x, y):
     else:
         print('error')
 
-
-
 print('''0-addintion
 1-subtraction
 2-multiplation
@@ -55,14 +53,8 @@ elif operation == '4':
         x_1 = (-b) / (2 * a)
         answer = 'x_1 = ', x_1
     elif delta < 0:
-
-        i = math.sqrt(-1)
-        x_1 = (-b + (i * math.sqrt(delta))) / (2 * a)
-        x_2 = (-b + (i * math.sqrt(delta))) / (2 * a)
-        answer = 'x_1= ', x_1, 'x_2 = ' , x_2
-
-        #print("we dont use complex number yet, try something else")
-        #sys.exit()
+        print("we dont use complex number yet, try something else")
+        sys.exit()
     else:
         sys.exit()
         
