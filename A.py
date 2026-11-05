@@ -12,6 +12,7 @@ def devid(x, y):
         return x / y
     else:
         print('error')
+        sys.exit()
 
 print('''0-addintion
 1-subtraction
@@ -49,8 +50,6 @@ elif operation == '4':
             answer = 'x_1 = ', round(x_1, 3)
         elif delta < 0:
             print("we dont use complex number yet, try something else")
-            sys.exit()
-        else:
             sys.exit()
     else:
         print('error')
