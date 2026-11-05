@@ -1,6 +1,5 @@
 import sys
 import math
-from math import sqrt
 
 def add(x, y):
     return x + y
@@ -42,8 +41,8 @@ elif operation == '4':
     if a != 0:
         delta = (b ** 2) - (4 * a * c)
         if delta > 0:
-            x_1 = (-b - sqrt(int(delta))) / (2 * a)
-            x_2 = (-b + sqrt(int(delta))) / (2 * a)
+            x_1 = (-b - math.sqrt(int(delta))) / (2 * a)
+            x_2 = (-b + math.sqrt(int(delta))) / (2 * a)
             answer = 'x_1= ', round(x_1, 3), 'x_2 = ' , round(x_2, 3)
         elif delta == 0:
             x_1 = (-b) / (2 * a)
