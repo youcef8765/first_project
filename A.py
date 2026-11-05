@@ -2,7 +2,6 @@ import sys
 import math
 from math import sqrt
 
-
 def add(x, y):
     return x + y
 def sub(x, y):
@@ -23,44 +22,46 @@ print('''0-addintion
 
 operation = input("choose one: ")
 
-
-if operation == '0':
-    a = int(input("A = "))
-    b = int(input("B = "))
-    answer = add(a, b)
-elif operation == '1':
-    a = int(input("A = "))
-    b = int(input("B = "))
-    answer = sub(a, b)
-elif operation == '2':
-    a = int(input("A = "))
-    b = int(input("B = "))
-    answer = mult(a, b)
-elif operation == '3':
-    a = int(input("A = "))
-    b = int(input("B = "))
-    answer = devid(a, b)
+if operation in ('0', '1', '2', '3'):
+    a = float(input('A = '))
+    b = float(input('B = '))
 elif operation == '4':
-    a = int(input("A = "))
-    b = int(input("B = "))
-    c = int(input("C = "))
-    delta = (b ** 2) - (4 * a * c)
-    if delta > 0:
-        x_1 = (-b - sqrt(int(delta))) / (2 * a)
-        x_2 = (-b + sqrt(int(delta))) / (2 * a)
-        answer = 'x_1= ', x_1, 'x_2 = ' , x_2
-    elif delta == 0:
-        x_1 = (-b) / (2 * a)
-        answer = 'x_1 = ', x_1
-    elif delta < 0:
-        print("we dont use complex number yet, try something else")
-        sys.exit()
+    a = float(input("A = "))
+    b = float(input("B = "))
+    c = float(input("C = "))
+    
+if operation == '0':
+    answer = round(add(a, b), 3)
+elif operation == '1':
+    answer = round(sub(a, b), 3)
+elif operation == '2':
+    answer = round(mult(a, b), 3)
+elif operation == '3':
+    answer = round(devid(a, b), 3)
+elif operation == '4':
+    if a != 0:
+        delta = (b ** 2) - (4 * a * c)
+        if delta > 0:
+            x_1 = (-b - sqrt(int(delta))) / (2 * a)
+            x_2 = (-b + sqrt(int(delta))) / (2 * a)
+            answer = 'x_1= ', round(x_1, 3), 'x_2 = ' , round(x_2, 3)
+        elif delta == 0:
+            x_1 = (-b) / (2 * a)
+            answer = 'x_1 = ', round(x_1, 3)
+        elif delta < 0:
+            print("we dont use complex number yet, try something else")
+            sys.exit()
+        else:
+            sys.exit()
     else:
-        sys.exit()
-        
+        print('error')
+        sys.exit()    
 else:
     print(f'error ==> there is no {operation} in the list')
     sys.exit()
 
-
+if delta > 0:
+    print(f'delta = {delta} > 0')
+else:
+    print(f'delta = {delta} < 0')
 print(f"your answeris > {answer} <")
